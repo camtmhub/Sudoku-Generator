@@ -1,0 +1,68 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(9, 50px);
+  grid-template-rows: repeat(9, 50px);
+  border: 4px solid black;
+}
+
+/* Establecer grosores de borde en la cuadrícula del Sudoku */
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid black; /* Grosor estándar para los bordes de las celdas */
+  border-right: 2px solid black; /* Borde derecho normal */
+  font-family: 'Roboto', sans-serif;
+  font-size: 35px;
+}
+
+/* Ajustar el grosor del borde derecho para cada tercera celda */
+.cell:nth-child(3n) {
+  border-right-width: 3px; /* Borde derecho más grueso para cada tercera celda */
+}
+.cell:nth-child(n + 19):nth-child(-n + 27),
+.cell:nth-child(n + 46):nth-child(-n + 54),
+.cell:nth-child(n + 73):nth-child(-n + 81) {
+    border-bottom-width: 3px; /* Borde inferior más grueso para las celdas específicas */
+}
+/* Borde más grueso para toda la cuadrícula */
+
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-top: 50px;
+  border-radius: 10%;
+}
+
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 50px;
+  border-radius: 50%;
+  align-items: center;
+}
